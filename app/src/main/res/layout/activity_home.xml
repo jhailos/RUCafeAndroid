@@ -4,142 +4,228 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/ordersLayout"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:layout_marginStart="177dp"
+        android:layout_marginLeft="177dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="208dp"
+        android:layout_marginRight="208dp"
+        android:layout_marginBottom="540dp"
+        android:text="Tax:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/totalValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="177dp"
+        android:layout_marginLeft="177dp"
+        android:layout_marginTop="199dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginRight="176dp"
+        android:layout_marginBottom="513dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="313dp"
+        android:layout_marginLeft="313dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginRight="63dp"
+        android:layout_marginBottom="540dp"
+        android:text="Total:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/totalValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="313dp"
+        android:layout_marginLeft="313dp"
+        android:layout_marginTop="199dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="513dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/orderCoffeeFrame"
+        android:layout_width="115dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="288dp"
+        android:layout_marginLeft="288dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="571dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/orderDonutFrame"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/orderCoffeeButton"
+            android:layout_width="114dp"
+            android:layout_height="119dp"
+            android:contentDescription="Order Coffee"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/coffee_home" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="Order Coffee" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/orderDonutFrame"
+        android:layout_width="115dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginRight="136dp"
+        android:layout_marginBottom="571dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <FrameLayout
-            android:id="@+id/orderSandwichFrame"
-            android:layout_width="115dp"
-            android:layout_height="160dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
+        <ImageButton
+            android:id="@+id/orderDonutButton"
+            android:layout_width="114dp"
+            android:layout_height="119dp"
+            android:contentDescription="Order Donut"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/donut_home" />
 
-            <ImageButton
-                android:id="@+id/orderSandwichButton"
-                android:layout_width="114dp"
-                android:layout_height="119dp"
-                android:contentDescription="Order Sandwich"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/sandwich_home" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="Order Donut" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:text="Order Sandwich" />
+    </FrameLayout>
 
-        </FrameLayout>
+    <FrameLayout
+        android:id="@+id/orderSandwichFrame"
+        android:layout_width="115dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginBottom="571dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/orderDonutFrame"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <FrameLayout
-            android:id="@+id/orderDonutFrame"
-            android:layout_width="115dp"
-            android:layout_height="160dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
+        <ImageButton
+            android:id="@+id/orderSandwichButton"
+            android:layout_width="114dp"
+            android:layout_height="119dp"
+            android:contentDescription="Order Sandwich"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/sandwich_home" />
 
-            <ImageButton
-                android:id="@+id/orderDonutButton"
-                android:layout_width="114dp"
-                android:layout_height="119dp"
-                android:contentDescription="Order Donut"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/donut_home" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="Order Sandwich" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:text="Order Donut" />
+    </FrameLayout>
 
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/orderCoffeeFrame"
-            android:layout_width="115dp"
-            android:layout_height="160dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp">
-
-            <ImageButton
-                android:id="@+id/orderCoffeeButton"
-                android:layout_width="114dp"
-                android:layout_height="119dp"
-                android:contentDescription="Order Coffee"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/coffee_home" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:text="Order Coffee" />
-
-        </FrameLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/pricesLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/ordersLayout"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <FrameLayout
-            android:id="@+id/subtotalFrame"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/subtotalDisplay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-        </FrameLayout>
-
-    </LinearLayout>
+    <ListView
+        android:layout_width="406dp"
+        android:layout_height="446dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="283dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/shoppingCartText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="98dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="238dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginRight="98dp"
+        android:layout_marginBottom="448dp"
         android:text="Shopping Cart"
         android:textSize="34sp"
-        app:layout_constraintTop_toBottomOf="@+id/pricesLayout"
-        app:layout_constraintStart_toStartOf="@+id/pricesLayout"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ListView
-        android:id="@+id/ShoppingCartListView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shoppingCartText" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="313dp"
+        android:layout_marginRight="313dp"
+        android:layout_marginBottom="540dp"
+        android:text="Subtotal:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/totalValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="199dp"
+        android:layout_marginEnd="311dp"
+        android:layout_marginRight="311dp"
+        android:layout_marginBottom="513dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
