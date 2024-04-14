@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/ordersLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -18,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <FrameLayout
+            android:id="@+id/orderSandwichFrame"
             android:layout_width="115dp"
             android:layout_height="160dp"
             android:layout_marginLeft="5dp"
@@ -29,7 +30,7 @@
                 android:layout_height="119dp"
                 android:contentDescription="Order Sandwich"
                 android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
+                app:srcCompat="@drawable/sandwich_home" />
 
             <TextView
                 android:id="@+id/textView"
@@ -42,6 +43,7 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/orderDonutFrame"
             android:layout_width="115dp"
             android:layout_height="160dp"
             android:layout_marginLeft="5dp"
@@ -53,7 +55,7 @@
                 android:layout_height="119dp"
                 android:contentDescription="Order Donut"
                 android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
+                app:srcCompat="@drawable/donut_home" />
 
             <TextView
                 android:id="@+id/textView"
@@ -66,6 +68,7 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/orderCoffeeFrame"
             android:layout_width="115dp"
             android:layout_height="160dp"
             android:layout_marginLeft="5dp"
@@ -77,7 +80,7 @@
                 android:layout_height="119dp"
                 android:contentDescription="Order Coffee"
                 android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
+                app:srcCompat="@drawable/coffee_home" />
 
             <TextView
                 android:id="@+id/textView"
@@ -90,23 +93,53 @@
         </FrameLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/pricesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/ordersLayout"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout
+            android:id="@+id/subtotalFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/subtotalDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/shoppingCartText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Shopping Cart"
         android:textSize="34sp"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pricesLayout"
+        app:layout_constraintStart_toStartOf="@+id/pricesLayout"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/ShoppingCartListView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/shoppingCartText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
