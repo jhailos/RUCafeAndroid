@@ -90,6 +90,7 @@
             android:layout_width="114dp"
             android:layout_height="119dp"
             android:contentDescription="Order Coffee"
+            android:onClick="goToCoffeeView"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/coffee_home" />
 
@@ -122,6 +123,7 @@
             android:layout_width="114dp"
             android:layout_height="119dp"
             android:contentDescription="Order Donut"
+            android:onClick="goToDonutView"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/donut_home" />
 
@@ -249,6 +251,7 @@
         android:layout_width="107dp"
         android:layout_height="56dp"
         android:layout_marginTop="667dp"
+        android:onClick="goToOrdersView"
         android:text="All Orders"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="152dp" />

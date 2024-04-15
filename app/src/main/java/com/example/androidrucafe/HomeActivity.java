@@ -30,4 +30,19 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SandwichActivity.class);
         startActivity(intent);
     }
+
+    public void goToDonutView(View view) {
+        Intent intent = new Intent(this, DonutActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToCoffeeView(View view) {
+        Intent intent = new Intent(this, CoffeeActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToOrdersView(View view) {
+        Intent intent = new Intent(this, OrdersActivity.class);
+        startActivity(intent);
+    }
 }
