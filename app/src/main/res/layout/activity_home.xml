@@ -223,8 +223,8 @@
 
     <Button
         android:id="@+id/removeSelectedItemButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="128dp"
+        android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="667dp"
@@ -234,13 +234,22 @@
 
     <Button
         android:id="@+id/placeOrderButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="258dp"
-        android:layout_marginLeft="258dp"
-        android:layout_marginTop="667dp"
+        android:layout_width="120dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginLeft="272dp"
+        android:layout_marginTop="668dp"
         android:text="Place Order"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/allOrdersButton"
+        android:layout_width="107dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="667dp"
+        android:text="All Orders"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="152dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
