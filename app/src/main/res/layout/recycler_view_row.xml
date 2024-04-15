@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -19,7 +19,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/rowImage"
                 android:layout_width="146dp"
                 android:layout_height="130dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -27,23 +27,23 @@
                 app:srcCompat="@drawable/donut_home" />
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/qtySpinner"
                 android:layout_width="160dp"
                 android:layout_height="68dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                app:layout_constraintStart_toEndOf="@+id/rowImage"
+                app:layout_constraintTop_toBottomOf="@+id/optionName" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/optionName"
                 android:layout_width="85dp"
                 android:layout_height="45dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="16dp"
                 android:text="TextView"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintStart_toEndOf="@+id/rowImage"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

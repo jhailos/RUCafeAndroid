@@ -9,6 +9,7 @@ package com.example.androidrucafe;
 public class Donut extends MenuItem{
     private String type; //donut type can only be "yeast", "cake", or "hole" (GUI ensured)
     private String flavor;
+    private int image;
     private static final double YEAST_PRICE = 1.79;
     private static final double CAKE_PRICE = 1.89;
     private static final double HOLE_PRICE = 0.39;
@@ -24,6 +25,21 @@ public class Donut extends MenuItem{
         super(qty);
         this.type = type;
         this.flavor = flavor;
+    }
+
+    /**
+     * Constructor method for an instance of the Donut class w/ img
+     *
+     * @param qty
+     * @param type
+     * @param flavor
+     * @param image
+     */
+    public Donut(int qty, String type, String flavor, int image) {
+        super(qty);
+        this.type = type;
+        this.flavor = flavor;
+        this.image = image;
     }
 
     /**
@@ -88,5 +104,14 @@ public class Donut extends MenuItem{
      */
     public String getFlavor() {
         return this.flavor;
+    }
+
+    /**
+     * Getter method for the image
+     *
+     * @return image
+     */
+    public int getImage() {
+        return this.image;
     }
 }
