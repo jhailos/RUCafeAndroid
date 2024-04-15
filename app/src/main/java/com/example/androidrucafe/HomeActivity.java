@@ -45,4 +45,9 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, OrdersActivity.class);
         startActivity(intent);
     }
+
+    public void goToHomeView(View view) {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
 }
