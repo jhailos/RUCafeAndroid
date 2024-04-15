@@ -1,4 +1,4 @@
-package rucafe;
+package com.example.androidrucafe;
 
 /**
  * Subclass of MenuItem class for the item donut

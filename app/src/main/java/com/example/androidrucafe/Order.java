@@ -1,4 +1,4 @@
-package rucafe;
+package com.example.androidrucafe;
 
 import java.util.ArrayList;
 

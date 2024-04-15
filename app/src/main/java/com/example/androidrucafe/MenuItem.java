@@ -1,6 +1,4 @@
-package rucafe;
-
-import javafx.collections.ObservableList;
+package com.example.androidrucafe;
 
 /**
  * Abstract class for subclasses of menu item types

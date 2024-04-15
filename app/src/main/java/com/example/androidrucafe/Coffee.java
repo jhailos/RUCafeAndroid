@@ -1,4 +1,4 @@
-package rucafe;
+package com.example.androidrucafe;
 
 /**
  * Subclass of MenuItem class for the item coffee
@@ -6,7 +6,7 @@ package rucafe;
  * @author Jason Hailos, Andrew Lin
  */
 
-public class Coffee extends MenuItem{
+public class Coffee extends MenuItem {
     private String size;
     private boolean sweetCream;
     private boolean frenchVanilla;

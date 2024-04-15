@@ -152,6 +152,7 @@
             android:layout_width="114dp"
             android:layout_height="119dp"
             android:contentDescription="Order Sandwich"
+            android:onClick="goToSandwichView"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/sandwich_home" />
 

@@ -13,7 +13,19 @@
         android:theme="@style/Theme.AndroidRUCafe"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".SandwichActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CoffeeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DonutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
