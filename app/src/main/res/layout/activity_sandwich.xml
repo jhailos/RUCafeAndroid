@@ -41,7 +41,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/quantitySelect"
+        android:id="@+id/sandwichQuantitySelect"
         android:layout_width="128dp"
         android:layout_height="30dp"
         android:layout_marginStart="96dp"

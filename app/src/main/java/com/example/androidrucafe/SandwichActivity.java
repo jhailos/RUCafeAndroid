@@ -23,7 +23,7 @@ public class SandwichActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sandwich);
         // initialize quantitySelect spinner listener
-        quantitySelect = findViewById(R.id.quantitySelect);
+        quantitySelect = findViewById(R.id.sandwichQuantitySelect);
         quantitySelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
