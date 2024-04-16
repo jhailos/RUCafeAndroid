@@ -250,10 +250,12 @@
         android:id="@+id/allOrdersButton"
         android:layout_width="107dp"
         android:layout_height="56dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
         android:layout_marginTop="667dp"
         android:onClick="goToOrdersView"
         android:text="All Orders"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="152dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
