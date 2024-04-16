@@ -98,8 +98,8 @@ public class DonutAdaptor extends RecyclerView.Adapter<DonutAdaptor.MyViewHolder
             super(itemView);
 
             imageView = itemView.findViewById(R.id.rowImage);
-            textView = textView.findViewById(R.id.optionName);
-            spinner = spinner.findViewById(R.id.qtySpinner);
+            textView = itemView.findViewById(R.id.optionName);
+            spinner = itemView.findViewById(R.id.qtySpinner);
 
         }
     }
