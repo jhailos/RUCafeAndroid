@@ -32,6 +32,7 @@
                 android:layout_height="68dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
+                android:entries="@array/zero_quantity_array"
                 app:layout_constraintStart_toEndOf="@+id/rowImage"
                 app:layout_constraintTop_toBottomOf="@+id/optionName" />
 
