@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/homeButton"
+        android:id="@+id/sandwichHomeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/ordersSelectPastOrderButton"
         android:layout_width="241dp"
         android:layout_height="46dp"
         android:layout_marginStart="15dp"
@@ -52,6 +52,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
+        android:id="@+id/ordersListView"
         android:layout_width="409dp"
         android:layout_height="512dp"
         android:layout_marginStart="1dp"
@@ -61,7 +62,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/cancelOrderButton"
+        android:id="@+id/ordersCancelOrderButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="264dp"
@@ -84,7 +85,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/totalAmountValue"
+        android:id="@+id/ordersTotalAmountValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="269dp"

@@ -1,10 +1,8 @@
 package com.example.androidrucafe;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -124,7 +122,7 @@ public class SandwichActivity extends AppCompatActivity {
         if (missingNecessaryFields()) return; // can't calculate, missing info
         Sandwich order = new Sandwich(getQuantity(), getProtein(), getBread(), getCheese(),
                 getLettuce(), getTomato(), getOnion());
-        TextView subtotalText = findViewById(R.id.subtotalValue);
+        TextView subtotalText = findViewById(R.id.sandwichSubtotalValue);
         subtotalText.setText("$ " + String.valueOf(order.price()));
     }
 

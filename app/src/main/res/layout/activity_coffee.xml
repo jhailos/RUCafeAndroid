@@ -97,7 +97,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/coffeeAddButton"
+        android:id="@+id/coffeeAddToOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="216dp"
@@ -126,5 +126,12 @@
         android:text="Home"
         tools:layout_editor_absoluteX="20dp"
         tools:layout_editor_absoluteY="21dp" />
+
+    <TextView
+        android:id="@+id/coffeeSubtotalValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="271dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
