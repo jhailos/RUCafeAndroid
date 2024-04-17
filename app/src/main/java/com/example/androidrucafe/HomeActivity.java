@@ -59,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
      */
     private void showAlert(String message) {
         androidx.appcompat.app.AlertDialog.Builder alert = new androidx.appcompat.app.AlertDialog.Builder(this);
-        alert.setTitle("Demo the alert dialog.");
+        alert.setTitle("Alert");
         alert.setMessage(message);
         //anonymous inner class to handle the onClick event of YES or NO.
         alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
