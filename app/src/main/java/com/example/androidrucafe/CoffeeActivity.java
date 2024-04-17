@@ -49,6 +49,11 @@ public class CoffeeActivity extends AppCompatActivity {
         });
     }
 
+    public void goToHomeView(View view) {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+
     /**
      * Get the state of the sweet cream CheckBox
      * @return true if checked
