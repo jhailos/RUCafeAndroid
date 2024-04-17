@@ -43,7 +43,7 @@ public class DonutActivity extends AppCompatActivity {
         Cart.getInstance().populateOptions(donutTypes, donutFlavor, donutImages);
     }
 
-    public void calcSubTotal() {
+    public void calcSubTotal(View view) {
         double sum = 0.0;
         for (int i = 0; i < Cart.getInstance().getDonutOptions().size(); i++) {
             sum = sum + Cart.getInstance().getDonutOptions().get(i).price();
