@@ -1,5 +1,6 @@
 package com.example.androidrucafe;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -8,7 +9,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SandwichActivity extends AppCompatActivity {
@@ -34,6 +37,13 @@ public class SandwichActivity extends AppCompatActivity {
                 // do nothing
             }
         });
+    }
+
+    /**
+     * Display a toast to the user
+     */
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -127,6 +137,10 @@ public class SandwichActivity extends AppCompatActivity {
     }
 
     public void addToOrder(View view) {
+        if (missingNecessaryFields()) {
+            showToast("Missing necessary fields");
+            return;
+        }
         String bread = getBread();
         String protein = getProtein();
         // INCOMPLETE!
