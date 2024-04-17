@@ -106,7 +106,7 @@ public class DonutAdaptor extends RecyclerView.Adapter<DonutAdaptor.MyViewHolder
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     String item = parent.getItemAtPosition(position).toString();
-                    
+                    Cart.getInstance().getDonutOptions().get(position).setQty(Integer.parseInt(item));
                 }
 
                 @Override
