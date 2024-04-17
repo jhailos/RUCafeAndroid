@@ -124,4 +124,10 @@ public class CoffeeActivity extends AppCompatActivity {
         TextView subtotalText = findViewById(R.id.coffeeSubtotalValue);
         subtotalText.setText("$ " + String.valueOf(order.price()));
     }
+
+    public void addToOrder(View view) {
+        Coffee order = new Coffee(getQuantity(), getSize(), getSweetCream(),
+                getFrenchVanilla(), getIrishCream(), getCaramel(), getMocha());
+        Cart.cartList.add(order);
+    }
 }

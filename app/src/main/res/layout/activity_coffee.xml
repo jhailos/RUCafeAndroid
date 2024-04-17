@@ -105,6 +105,7 @@
         android:layout_marginStart="216dp"
         android:layout_marginLeft="216dp"
         android:layout_marginTop="416dp"
+        android:onClick="addToOrder"
         android:text="Add To Order"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
