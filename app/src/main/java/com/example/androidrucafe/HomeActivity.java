@@ -14,10 +14,16 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private Cart cart = Cart.getInstance();
+    private ArrayAdapter<MenuItem> adapter;
+    private ListView listview;
 
     /**
      * Perform initial setup
@@ -27,6 +33,18 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Cart.cartList);
+        listview = findViewById(R.id.homeListView);
+        listview.setAdapter(adapter);
+    }
+
+    /**
+     * Perform on resuming view
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
     }
 
     public void goToSandwichView(View view) {
@@ -49,11 +67,6 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToHomeView(View view) {
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
-    }
-
     /**
      * Display an alert to the user
      */
@@ -73,5 +86,9 @@ public class HomeActivity extends AppCompatActivity {
         });
         AlertDialog dialog = alert.create();
         dialog.show();
+    }
+
+    public void removeSelected(View view) {
+
     }
 }

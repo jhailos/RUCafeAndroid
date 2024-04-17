@@ -1,6 +1,7 @@
 package com.example.androidrucafe;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -37,6 +38,11 @@ public class SandwichActivity extends AppCompatActivity {
                 // do nothing
             }
         });
+    }
+
+    public void goToHomeView(View view) {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
     }
 
     /**
@@ -138,11 +144,11 @@ public class SandwichActivity extends AppCompatActivity {
 
     public void addToOrder(View view) {
         if (missingNecessaryFields()) {
-            showToast("Missing necessary fields");
+            showToast(getString(R.string.missingFieldsError));
             return;
         }
-        String bread = getBread();
-        String protein = getProtein();
-        // INCOMPLETE!
+        Sandwich order = new Sandwich(getQuantity(), getProtein(), getBread(), getCheese(),
+                getLettuce(), getTomato(), getOnion());
+        Cart.cartList.add(order);
     }
 }

@@ -49,6 +49,11 @@ public class CoffeeActivity extends AppCompatActivity {
         });
     }
 
+    public void goToHomeView(View view) {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+
     /**
      * Get the state of the sweet cream CheckBox
      * @return true if checked
@@ -118,5 +123,11 @@ public class CoffeeActivity extends AppCompatActivity {
                 getFrenchVanilla(), getIrishCream(), getCaramel(), getMocha());
         TextView subtotalText = findViewById(R.id.coffeeSubtotalValue);
         subtotalText.setText("$ " + String.valueOf(order.price()));
+    }
+
+    public void addToOrder(View view) {
+        Coffee order = new Coffee(getQuantity(), getSize(), getSweetCream(),
+                getFrenchVanilla(), getIrishCream(), getCaramel(), getMocha());
+        Cart.cartList.add(order);
     }
 }
