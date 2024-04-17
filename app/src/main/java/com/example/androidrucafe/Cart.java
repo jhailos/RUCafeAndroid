@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Singleton class
+ * Stores global order data to share between activities
  */
 public class Cart {
     private static Cart instance;
