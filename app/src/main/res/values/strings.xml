@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">AndroidRUCafe</string>
-    
     <string-array name="donut_type">
         <item>yeast</item>
         <item>yeast</item>
@@ -15,7 +14,6 @@
         <item>hole</item>
         <item>hole</item>
     </string-array>
-
     <string-array name="donut_flavor">
         <item>plain</item>
         <item>choco</item>
@@ -30,4 +28,5 @@
         <item>choco</item>
         <item>vanilla</item>
     </string-array>
+    <string name="missingFieldsError">Missing necessary fields</string>
 </resources>

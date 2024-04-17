@@ -90,5 +90,8 @@ public class HomeActivity extends AppCompatActivity {
 
     public void removeSelected(View view) {
 //        adapter.notifyDataSetChanged();
+        for (MenuItem item : Cart.cartList) {
+            showAlert(item.toString());
+        }
     }
 }
