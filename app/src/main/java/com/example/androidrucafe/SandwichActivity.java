@@ -1,16 +1,17 @@
 package com.example.androidrucafe;
 
-import android.content.Intent;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SandwichActivity extends AppCompatActivity {
@@ -25,7 +26,7 @@ public class SandwichActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sandwich);
         // initialize quantitySelect spinner listener
-        quantitySelect = findViewById(R.id.quantitySelect);
+        quantitySelect = findViewById(R.id.sandwichQuantitySelect);
         quantitySelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -36,6 +37,13 @@ public class SandwichActivity extends AppCompatActivity {
                 // do nothing
             }
         });
+    }
+
+    /**
+     * Display a toast to the user
+     */
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -124,11 +132,15 @@ public class SandwichActivity extends AppCompatActivity {
         if (missingNecessaryFields()) return; // can't calculate, missing info
         Sandwich order = new Sandwich(getQuantity(), getProtein(), getBread(), getCheese(),
                 getLettuce(), getTomato(), getOnion());
-        TextView subtotalText = findViewById(R.id.subtotalValue);
+        TextView subtotalText = findViewById(R.id.sandwichSubtotalValue);
         subtotalText.setText("$ " + String.valueOf(order.price()));
     }
 
     public void addToOrder(View view) {
+        if (missingNecessaryFields()) {
+            showToast("Missing necessary fields");
+            return;
+        }
         String bread = getBread();
         String protein = getProtein();
         // INCOMPLETE!

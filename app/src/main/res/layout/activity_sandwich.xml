@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/sandwich" />
 
     <Button
-        android:id="@+id/homeButton"
+        android:id="@+id/sandwichHomeButton"
         android:layout_width="88dp"
         android:layout_height="65dp"
         android:layout_marginStart="8dp"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/quantitySelect"
+        android:id="@+id/sandwichQuantitySelect"
         android:layout_width="128dp"
         android:layout_height="30dp"
         android:layout_marginStart="96dp"
@@ -53,7 +53,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/subtotalValue"
+        android:id="@+id/sandwichSubtotalValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="97dp"
@@ -160,7 +160,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/addToOrderButton"
+        android:id="@+id/sandwichAddToOrderButton"
         android:layout_width="217dp"
         android:layout_height="47dp"
         android:layout_marginStart="97dp"
