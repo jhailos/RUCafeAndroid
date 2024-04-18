@@ -39,6 +39,7 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
         listview = findViewById(R.id.homeListView);
         listview.setAdapter(adapter);
         listview.setOnItemClickListener(this);
+        populateNums();
     }
 
     /**
