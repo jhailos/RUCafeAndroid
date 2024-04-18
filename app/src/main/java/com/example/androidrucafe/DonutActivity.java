@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 public class DonutActivity extends AppCompatActivity {
 
+    private DonutAdaptor adaptor;
+
     /**
      * Perform initial setup
      * @param savedInstanceState
@@ -26,9 +28,19 @@ public class DonutActivity extends AppCompatActivity {
 
         setUpDonutArray();
 
-        DonutAdaptor adaptor = new DonutAdaptor(this, Cart.getInstance().getDonutOptions());
+        adaptor = new DonutAdaptor(this, Cart.getInstance().getDonutOptions());
         recyclerView.setAdapter(adaptor);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    public void remove(View view) {
+        for (int i = 0; i < Cart.getInstance().getDonutOptions().size(); i++) {
+            if (Cart.getInstance().getDonutOptions().get(i).getQty() != 0) {
+                Cart.getInstance().getDonutOptions().remove(i);
+                i--;
+            }
+        }
+        adaptor.notifyDataSetChanged();
     }
 
     public void goToHomeView(View view) {
