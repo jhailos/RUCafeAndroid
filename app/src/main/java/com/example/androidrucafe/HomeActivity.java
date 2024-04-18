@@ -14,12 +14,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private Cart cart = Cart.getInstance();
     private ArrayAdapter<MenuItem> adapter;
@@ -36,6 +37,23 @@ public class HomeActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Cart.cartList);
         listview = findViewById(R.id.homeListView);
         listview.setAdapter(adapter);
+        listview.setOnItemClickListener(this);
+    }
+
+    /**
+     * The event Handler for the onItemClick event on the ListView
+     * @param adapterView The AdapterView where the click happened.
+     * @param view The View within the AdapterView that was clicked (in this example is ListView)
+     * @param i the index/position of the view that was clicked in the adapter.
+     * @param l the row id (index) of the item that was clicked.
+     */
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Cart.cartList.remove(i);
+        //list.remove((int) l); //type cast a long to an int if you use the row id
+        adapter.notifyDataSetChanged(); //notify the attached observer the underlying data has been changed.
+        //for (String s: list)  //a test to print out the data source to see if they are in sync
+        //    System.out.println(s);
     }
 
     /**
