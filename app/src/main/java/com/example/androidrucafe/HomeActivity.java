@@ -25,6 +25,7 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
     private Cart cart = Cart.getInstance();
     private ArrayAdapter<MenuItem> adapter;
     private ListView listview;
+    private static final double TAX_PERCENT = 0.0665;
 
     /**
      * Perform initial setup
@@ -52,8 +53,29 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
         Cart.cartList.remove(i);
         //list.remove((int) l); //type cast a long to an int if you use the row id
         adapter.notifyDataSetChanged(); //notify the attached observer the underlying data has been changed.
-        //for (String s: list)  //a test to print out the data source to see if they are in sync
-        //    System.out.println(s);
+
+        populateNums();
+    }
+
+    private void populateNums() {
+        double subtotal = 0;
+        for (int j = 0; j < Cart.cartList.size(); j++) {
+            subtotal = subtotal + Cart.cartList.get(j).price();
+        }
+        subtotal = Math.round(subtotal * Math.pow(10, 2)) / Math.pow(10, 2);
+
+        double tax = Math.round((subtotal * TAX_PERCENT) * Math.pow(10, 2)) / Math.pow(10, 2);
+
+        double total = Math.round((subtotal + tax) * Math.pow(10, 2)) / Math.pow(10, 2);
+
+        TextView homeSubtotalValue = findViewById(R.id.homeSubtotalValue);
+        homeSubtotalValue.setText(String.valueOf(subtotal));
+
+        TextView homeTaxValue = findViewById(R.id.homeTaxValue);
+        homeTaxValue.setText(String.valueOf(tax));
+
+        TextView homeTotalValue = findViewById(R.id.homeTotalValue);
+        homeTotalValue.setText(String.valueOf(total));
     }
 
     /**
@@ -104,9 +126,5 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
         });
         AlertDialog dialog = alert.create();
         dialog.show();
-    }
-
-    public void removeSelected(View view) {
-
     }
 }
