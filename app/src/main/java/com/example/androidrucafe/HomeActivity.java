@@ -20,6 +20,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /**
  * Home activity controller
  *
@@ -156,7 +158,9 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
      */
     public void placeOrder(View view) {
         Order order = new Order();
-        order.setList(Cart.cartList);
+        ArrayList<MenuItem> copy = new ArrayList<>(Cart.cartList);
+
+        order.setList(copy);
         Cart.cartList.clear();
         adapter.notifyDataSetChanged();
         Cart.allOrders.add(order);
