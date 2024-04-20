@@ -146,5 +146,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
             cartItemAdaptor.notifyDataSetChanged();
             showToast("Added to cart");
         }
+
+        calcSubTotal();
     }
 }
