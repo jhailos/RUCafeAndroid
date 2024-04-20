@@ -148,4 +148,19 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
         Intent intent = new Intent(this, OrdersActivity.class);
         startActivity(intent);
     }
+
+    /**
+     * Creates the order and puts into an all orders array
+     *
+     * @param view
+     */
+    public void placeOrder(View view) {
+        Order order = new Order();
+        order.setList(Cart.cartList);
+        Cart.cartList.clear();
+        adapter.notifyDataSetChanged();
+        Cart.allOrders.add(order);
+
+        populateNums();
+    }
 }
