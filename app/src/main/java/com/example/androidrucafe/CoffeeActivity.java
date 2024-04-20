@@ -129,7 +129,7 @@ public class CoffeeActivity extends AppCompatActivity {
      * @return name of selected size as a string
      */
     private String getSize() {
-        return (String) quantitySelect.getSelectedItem();
+        return (String) sizeSelect.getSelectedItem();
     }
 
     /**
