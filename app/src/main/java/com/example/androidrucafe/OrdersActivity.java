@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class OrdersActivity extends AppCompatActivity {
 
-    private ArrayAdapter<Order> adapterOrders;
+    private ArrayAdapter<Integer> adapterOrders;
     private ArrayList<Integer> listOrderNums = new ArrayList<Integer>();
     private ArrayAdapter<MenuItem> adapterMenuItems;
     private ArrayList<MenuItem> holder = new ArrayList<MenuItem>();
@@ -40,6 +40,7 @@ public class OrdersActivity extends AppCompatActivity {
         listview = findViewById(R.id.ordersListView);
         listview.setAdapter(adapterMenuItems);
 
+        adapterOrders = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listOrderNums);
         popOrderNumList();
         spinner = findViewById(R.id.ordersSelectPastOrderButton);
         spinner.setAdapter(adapterOrders);
@@ -74,6 +75,7 @@ public class OrdersActivity extends AppCompatActivity {
         for (int i = 0; i < Cart.allOrders.size(); i++) {
             listOrderNums.add(Cart.allOrders.get(i).getNum());
         }
+        adapterOrders.notifyDataSetChanged();
     }
 
     /**
