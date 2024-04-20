@@ -7,6 +7,8 @@ import java.util.ArrayList;
 /**
  * Singleton class
  * Stores global order data to share between activities
+ *
+ * @author Jason Hailos, Andrew Lin
  */
 public class Cart {
     private static Cart instance;
@@ -28,6 +30,12 @@ public class Cart {
         return donutOptions;
     }
 
+    /**
+     * Retrieve user selected options
+     * @param types
+     * @param flavors
+     * @param images
+     */
     public void populateOptions(String[] types, String[] flavors, int[] images) {
         donutOptions.clear();
 
@@ -36,6 +44,10 @@ public class Cart {
         }
     }
 
+    /**
+     * Calculate the subtotal
+     * @return subtotal as a double
+     */
     public double findSubTotal() {
         double amt = 0.0;
         for (int i = 0; i < donutOptions.size(); i++) {

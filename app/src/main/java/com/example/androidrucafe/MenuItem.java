@@ -58,6 +58,10 @@ abstract class MenuItem {
         return this.qty;
     }
 
+    /**
+     * Setter method for quantity
+     * @param qty
+     */
     public void setQty(int qty) {
         this.qty = qty;
     }

@@ -15,6 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+/**
+ * Donut activity controller
+ *
+ * @author Jason Hailos, Andrew Lin
+ */
 public class DonutActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private DonutAdaptor adaptor;
@@ -69,6 +74,9 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         calcSubTotal();
     }
 
+    /**
+     * Calculate the subtotal and display it to GUI
+     */
     private void calcSubTotal() {
         double total = 0.0;
         for (int i = 0; i < cartItems.size(); i ++) {
@@ -81,6 +89,10 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         textView.setText(display);
     }
 
+    /**
+     * Add selected donuts to donut cart
+     * @param view
+     */
     public void addToDonutCart(View view) {
         for (int i = 0; i < Cart.getInstance().getDonutOptions().size(); i++) {
             if (Cart.getInstance().getDonutOptions().get(i).getQty() != 0) {
@@ -95,6 +107,10 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         calcSubTotal();
     }
 
+    /**
+     * Switch to home view
+     * @param view
+     */
     public void goToHomeView(View view) {
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
@@ -105,6 +121,9 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
             R.drawable.cake_ube, R.drawable.cake_glazed, R.drawable.hole_plain, R.drawable.hole_choco,
             R.drawable.hole_vanilla};
 
+    /**
+     * Helper method to prepare donut array
+     */
     private void setUpDonutArray() {
         String[] donutTypes = getResources().getStringArray(R.array.donut_type);
         String[] donutFlavor = getResources().getStringArray(R.array.donut_flavor);
@@ -112,6 +131,10 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         Cart.getInstance().populateOptions(donutTypes, donutFlavor, donutImages);
     }
 
+    /**
+     * Add order in donut cart to home cart
+     * @param view
+     */
     public void donutAddToOrder(View view) {
         if(cartItems.isEmpty()) showToast("Cart is empty");
         while (!cartItems.isEmpty()) {

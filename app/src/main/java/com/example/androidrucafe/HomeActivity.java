@@ -20,6 +20,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Home activity controller
+ *
+ * @author Jason Hailos, Andrew Lin
+ */
 public class HomeActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private Cart cart = Cart.getInstance();
@@ -75,6 +80,9 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
         dialog.show();
     }
 
+    /**
+     * Calculate and display subtotal, tax, and total cart values
+     */
     private void populateNums() {
         double subtotal = 0;
         for (int j = 0; j < Cart.cartList.size(); j++) {
@@ -105,21 +113,37 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
         adapter.notifyDataSetChanged();
     }
 
+    /**
+     * Switch to sandwich view
+     * @param view
+     */
     public void goToSandwichView(View view) {
         Intent intent = new Intent(this, SandwichActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Switch to donut view
+     * @param view
+     */
     public void goToDonutView(View view) {
         Intent intent = new Intent(this, DonutActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Switch to coffee view
+     * @param view
+     */
     public void goToCoffeeView(View view) {
         Intent intent = new Intent(this, CoffeeActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Switch to orders view
+     * @param view
+     */
     public void goToOrdersView(View view) {
         Intent intent = new Intent(this, OrdersActivity.class);
         startActivity(intent);
