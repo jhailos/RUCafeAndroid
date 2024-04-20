@@ -89,7 +89,7 @@
         android:layout_marginEnd="61dp"
         android:layout_marginRight="61dp"
         android:layout_marginBottom="3dp"
-        android:text="cart items"
+        android:text="cart items (click to put back)"
         app:layout_constraintBottom_toTopOf="@+id/cartItemsListView"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
