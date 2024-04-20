@@ -149,6 +149,11 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
         startActivity(intent);
     }
 
+    /**
+     * Creates the order and puts into an all orders array
+     *
+     * @param view
+     */
     public void placeOrder(View view) {
         Order order = new Order();
         order.setList(Cart.cartList);
