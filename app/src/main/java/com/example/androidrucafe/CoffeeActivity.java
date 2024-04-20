@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -47,6 +48,13 @@ public class CoffeeActivity extends AppCompatActivity {
                 // do nothing
             }
         });
+    }
+
+    /**
+     * Display a toast to the user
+     */
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     public void goToHomeView(View view) {
@@ -129,5 +137,6 @@ public class CoffeeActivity extends AppCompatActivity {
         Coffee order = new Coffee(getQuantity(), getSize(), getSweetCream(),
                 getFrenchVanilla(), getIrishCream(), getCaramel(), getMocha());
         Cart.cartList.add(order);
+        showToast("Added to cart");
     }
 }

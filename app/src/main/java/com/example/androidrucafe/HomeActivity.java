@@ -51,11 +51,28 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
      */
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Cart.cartList.remove(i);
-        //list.remove((int) l); //type cast a long to an int if you use the row id
-        adapter.notifyDataSetChanged(); //notify the attached observer the underlying data has been changed.
-
-        populateNums();
+        // display an alert asking the user to confirm their decision
+        androidx.appcompat.app.AlertDialog.Builder alert = new androidx.appcompat.app.AlertDialog.Builder(this);
+        alert.setTitle("Alert");
+        alert.setMessage("Are you sure you would like to remove this item from the cart?");
+        //anonymous inner class to handle the onClick event of YES or NO.
+        alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), "YES", Toast.LENGTH_LONG).show();
+                // remove the item from cart
+                Cart.cartList.remove(i);
+                //list.remove((int) l); //type cast a long to an int if you use the row id
+                adapter.notifyDataSetChanged(); //notify the attached observer the underlying data has been changed.
+                populateNums();
+            }
+        }).setNegativeButton("no", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), "NO", Toast.LENGTH_LONG).show();
+                // do nothing
+            }
+        });
+        AlertDialog dialog = alert.create();
+        dialog.show();
     }
 
     private void populateNums() {
@@ -106,26 +123,5 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
     public void goToOrdersView(View view) {
         Intent intent = new Intent(this, OrdersActivity.class);
         startActivity(intent);
-    }
-
-    /**
-     * Display an alert to the user
-     */
-    private void showAlert(String message) {
-        androidx.appcompat.app.AlertDialog.Builder alert = new androidx.appcompat.app.AlertDialog.Builder(this);
-        alert.setTitle("Alert");
-        alert.setMessage(message);
-        //anonymous inner class to handle the onClick event of YES or NO.
-        alert.setPositiveButton("yes", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(), "YES", Toast.LENGTH_LONG).show();
-            }
-        }).setNegativeButton("no", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(), "NO", Toast.LENGTH_LONG).show();
-            }
-        });
-        AlertDialog dialog = alert.create();
-        dialog.show();
     }
 }

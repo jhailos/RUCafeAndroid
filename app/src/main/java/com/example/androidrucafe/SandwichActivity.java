@@ -150,5 +150,6 @@ public class SandwichActivity extends AppCompatActivity {
         Sandwich order = new Sandwich(getQuantity(), getProtein(), getBread(), getCheese(),
                 getLettuce(), getTomato(), getOnion());
         Cart.cartList.add(order);
+        showToast("Added to cart");
     }
 }
