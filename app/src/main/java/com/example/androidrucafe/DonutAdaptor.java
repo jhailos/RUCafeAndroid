@@ -100,6 +100,7 @@ public class DonutAdaptor extends RecyclerView.Adapter<DonutAdaptor.MyViewHolder
 
             imageView = itemView.findViewById(R.id.rowImage);
             textView = itemView.findViewById(R.id.optionName);
+            textView = itemView.findViewById(R.id.optionName);
             spinner = itemView.findViewById(R.id.qtySpinner);
 
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

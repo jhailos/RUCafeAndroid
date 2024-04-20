@@ -16,7 +16,7 @@
         android:layout_marginEnd="208dp"
         android:layout_marginRight="208dp"
         android:layout_marginBottom="540dp"
-        android:text="Tax:"
+        android:text="@string/tax"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,6 @@
         android:layout_marginEnd="176dp"
         android:layout_marginRight="176dp"
         android:layout_marginBottom="513dp"
-        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +47,7 @@
         android:layout_marginEnd="63dp"
         android:layout_marginRight="63dp"
         android:layout_marginBottom="540dp"
-        android:text="Total:"
+        android:text="@string/total"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +63,6 @@
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="513dp"
-        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:text="Order Coffee" />
+            android:text="@string/orderCoffee" />
 
     </FrameLayout>
 
@@ -133,7 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:text="Order Donut" />
+            android:text="@string/orderDonut" />
 
     </FrameLayout>
 
@@ -164,7 +162,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:text="Order Sandwich" />
+            android:text="@string/orderSandwich" />
 
     </FrameLayout>
 
@@ -187,7 +185,7 @@
         android:layout_marginEnd="98dp"
         android:layout_marginRight="98dp"
         android:layout_marginBottom="448dp"
-        android:text="Shopping Cart"
+        android:text="@string/shoppingCart"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -204,7 +202,7 @@
         android:layout_marginEnd="313dp"
         android:layout_marginRight="313dp"
         android:layout_marginBottom="540dp"
-        android:text="Subtotal:"
+        android:text="@string/subtotal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -220,7 +218,6 @@
         android:layout_marginEnd="311dp"
         android:layout_marginRight="311dp"
         android:layout_marginBottom="513dp"
-        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -233,7 +230,7 @@
         android:layout_marginStart="272dp"
         android:layout_marginLeft="272dp"
         android:layout_marginBottom="8dp"
-        android:text="Place Order"
+        android:text="@string/placeOrder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -245,7 +242,7 @@
         android:layout_marginLeft="152dp"
         android:layout_marginBottom="8dp"
         android:onClick="goToOrdersView"
-        android:text="All Orders"
+        android:text="@string/allOrders"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -256,7 +253,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="25dp"
-        android:text="Tap item to remove"
+        android:text="@string/removeInstructions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

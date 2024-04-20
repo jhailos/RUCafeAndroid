@@ -22,7 +22,7 @@
         android:layout_marginStart="124dp"
         android:layout_marginLeft="124dp"
         android:layout_marginBottom="66dp"
-        android:text="sub-total:"
+        android:text="@string/subtotal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button" />
 
@@ -33,8 +33,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:layout_marginBottom="37dp"
-        android:onClick="donutAddToOrder"
-        android:text="add to order"
+        android:text="@string/addToOrder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -46,7 +45,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="1dp"
         android:onClick="goToHomeView"
-        android:text="Home"
+        android:text="@string/home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,7 +57,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="39dp"
         android:onClick="addToDonutCart"
-        android:text="to cart"
+        android:text="@string/addToCart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button" />
 
@@ -79,7 +78,7 @@
         android:layout_marginEnd="59dp"
         android:layout_marginRight="59dp"
         android:layout_marginBottom="4dp"
-        android:text="menu options"
+        android:text="@string/menuOptions"
         app:layout_constraintBottom_toTopOf="@+id/donutMenuRecyclerView"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -90,7 +89,7 @@
         android:layout_marginEnd="61dp"
         android:layout_marginRight="61dp"
         android:layout_marginBottom="3dp"
-        android:text="cart items (click to put back)"
+        android:text="@string/cartItems"
         app:layout_constraintBottom_toTopOf="@+id/cartItemsListView"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
