@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -41,6 +42,13 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         cartItemAdaptor = new ArrayAdapter<Donut>(this, android.R.layout.simple_list_item_1, cartItems);
         listView.setAdapter(cartItemAdaptor);
         listView.setOnItemClickListener(this);
+    }
+
+    /**
+     * Display a toast to the user
+     */
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -105,6 +113,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
     }
 
     public void donutAddToOrder(View view) {
+        if(cartItems.isEmpty()) showToast("Cart is empty");
         while (!cartItems.isEmpty()) {
             Cart.getInstance().cartList.add(cartItems.get(0).duplicate());
             cartItems.get(0).setQty(0);
@@ -112,6 +121,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
             cartItems.remove(0);
             adaptor.notifyDataSetChanged();
             cartItemAdaptor.notifyDataSetChanged();
+            showToast("Added to cart");
         }
     }
 }
