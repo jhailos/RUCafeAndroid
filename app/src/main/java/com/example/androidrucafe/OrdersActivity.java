@@ -73,9 +73,7 @@ public class OrdersActivity extends AppCompatActivity {
      */
     private void updateMenuItemAdapter(Order order) {
         holder.clear();
-        for (int i = 0; i < order.getList().size(); i++) {
-            holder.add(order.getList().get(i));
-        }
+        holder.addAll(order.getList());
         adapterMenuItems.notifyDataSetChanged();
     }
 
