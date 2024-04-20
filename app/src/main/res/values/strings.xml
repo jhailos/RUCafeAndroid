@@ -29,4 +29,12 @@
         <item>vanilla</item>
     </string-array>
     <string name="missingFieldsError">Missing necessary fields</string>
+    <string name="orderSandwich">Order Sandwich</string>
+    <string name="orderDonut">Order Donut</string>
+    <string name="orderCoffee">Order Coffee</string>
+    <string name="subtotal">Subtotal:</string>
+    <string name="tax">Tax:</string>
+    <string name="total">Total:</string>
+    <string name="shoppingCart">Shopping Cart</string>
+    <string name="order">Order</string>
 </resources>
