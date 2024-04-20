@@ -15,6 +15,8 @@ public class Cart {
 
     public static ObservableArrayList<Donut> donutOptions = new ObservableArrayList<Donut>();
 
+    public static ArrayList<Order> allOrders = new ArrayList<Order>();
+
     private Cart() {
         cartList = new ArrayList<>();
     }
