@@ -87,13 +87,13 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
         double total = Math.round((subtotal + tax) * Math.pow(10, 2)) / Math.pow(10, 2);
 
         TextView homeSubtotalValue = findViewById(R.id.homeSubtotalValue);
-        homeSubtotalValue.setText(String.valueOf(subtotal));
+        homeSubtotalValue.setText("$ " + String.valueOf(subtotal));
 
         TextView homeTaxValue = findViewById(R.id.homeTaxValue);
-        homeTaxValue.setText(String.valueOf(tax));
+        homeTaxValue.setText("$ " + String.valueOf(tax));
 
         TextView homeTotalValue = findViewById(R.id.homeTotalValue);
-        homeTotalValue.setText(String.valueOf(total));
+        homeTotalValue.setText("$ " + String.valueOf(total));
     }
 
     /**
