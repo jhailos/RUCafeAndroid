@@ -5,7 +5,6 @@ package com.example.androidrucafe;
  *
  * @author Jason Hailos, Andrew Lin
  */
-
 public class Sandwich extends MenuItem{
     private String protein;
     private String bread;

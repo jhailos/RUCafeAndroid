@@ -5,7 +5,6 @@ package com.example.androidrucafe;
  *
  * @author Jason Hailos, Andrew Lin
  */
-
 abstract class MenuItem {
     protected int qty;
 

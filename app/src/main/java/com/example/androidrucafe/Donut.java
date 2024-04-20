@@ -5,7 +5,6 @@ package com.example.androidrucafe;
  *
  * @author Jason Hailos, Andrew Lin
  */
-
 public class Donut extends MenuItem{
     private String type; //donut type can only be "yeast", "cake", or "hole" (GUI ensured)
     private String flavor;

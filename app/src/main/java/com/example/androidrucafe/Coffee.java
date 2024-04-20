@@ -5,7 +5,6 @@ package com.example.androidrucafe;
  *
  * @author Jason Hailos, Andrew Lin
  */
-
 public class Coffee extends MenuItem {
     private String size;
     private boolean sweetCream;

@@ -18,6 +18,11 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 import java.util.ArrayList;
 
+/**
+ * Orders activity controller
+ *
+ * @author Jason Hailos, Andrew Lin
+ */
 public class OrdersActivity extends AppCompatActivity {
 
     private ArrayAdapter<Integer> adapterOrders;
@@ -62,6 +67,10 @@ public class OrdersActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Update the menu item adapter
+     * @param order
+     */
     private void updateMenuItemAdapter(Order order) {
         holder.clear();
         for (int i = 0; i < order.getList().size(); i++) {
@@ -70,6 +79,9 @@ public class OrdersActivity extends AppCompatActivity {
         adapterMenuItems.notifyDataSetChanged();
     }
 
+    /**
+     * Populate the order number list
+     */
     private void popOrderNumList() {
         listOrderNums.clear();
         for (int i = 0; i < Cart.allOrders.size(); i++) {

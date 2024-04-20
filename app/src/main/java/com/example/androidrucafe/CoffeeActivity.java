@@ -62,6 +62,10 @@ public class CoffeeActivity extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Switch to home view
+     * @param view
+     */
     public void goToHomeView(View view) {
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);

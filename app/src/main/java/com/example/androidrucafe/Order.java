@@ -7,7 +7,6 @@ import java.util.ArrayList;
  *
  * @author Jason Hailos, Andrew Lin
  */
-
 public class Order {
     private ArrayList<MenuItem> orderItems;
     private int orderNum;
