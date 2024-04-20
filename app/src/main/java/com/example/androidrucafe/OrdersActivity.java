@@ -11,6 +11,11 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Orders activity controller
+ *
+ * @author Jason Hailos, Andrew Lin
+ */
 import java.util.ArrayList;
 
 public class OrdersActivity extends AppCompatActivity {
@@ -71,6 +76,10 @@ public class OrdersActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Switch to home view
+     * @param view
+     */
     public void goToHomeView(View view) {
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);

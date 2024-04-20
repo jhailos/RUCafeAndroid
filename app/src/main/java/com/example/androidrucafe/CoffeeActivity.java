@@ -11,6 +11,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Coffee activity controller
+ *
+ * @author Jason Hailos, Andrew Lin
+ */
 public class CoffeeActivity extends AppCompatActivity {
 
     private Spinner quantitySelect;
@@ -133,6 +138,10 @@ public class CoffeeActivity extends AppCompatActivity {
         subtotalText.setText("$ " + String.valueOf(order.price()));
     }
 
+    /**
+     * Add order to the cart
+     * @param view
+     */
     public void addToOrder(View view) {
         Coffee order = new Coffee(getQuantity(), getSize(), getSweetCream(),
                 getFrenchVanilla(), getIrishCream(), getCaramel(), getMocha());

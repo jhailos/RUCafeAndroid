@@ -15,6 +15,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Sandwich activity controller
+ *
+ * @author Jason Hailos, Andrew Lin
+ */
 public class SandwichActivity extends AppCompatActivity {
     private Spinner quantitySelect;
 
@@ -40,6 +45,10 @@ public class SandwichActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Switch to home view
+     * @param view
+     */
     public void goToHomeView(View view) {
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
@@ -142,6 +151,10 @@ public class SandwichActivity extends AppCompatActivity {
         subtotalText.setText("$ " + String.valueOf(order.price()));
     }
 
+    /**
+     * Add order to cart
+     * @param view
+     */
     public void addToOrder(View view) {
         if (missingNecessaryFields()) {
             showToast(getString(R.string.missingFieldsError));

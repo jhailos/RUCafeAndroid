@@ -44,6 +44,17 @@ public class Sandwich extends MenuItem{
         this.tomatoes = false;
         this.onions = false;
     }
+
+    /**
+     * Constructor
+     * @param qty
+     * @param protein
+     * @param bread
+     * @param cheese
+     * @param lettuce
+     * @param tomatoes
+     * @param onions
+     */
     public Sandwich(int qty, String protein, String bread, boolean cheese,
                     boolean lettuce, boolean tomatoes, boolean onions) {
         super(qty);
@@ -213,26 +224,50 @@ public class Sandwich extends MenuItem{
         return this.onions;
     }
 
+    /**
+     * Setter method for protein
+     * @param protein
+     */
     public void setProtein(String protein) {
         this.protein = protein;
     }
 
+    /**
+     * Setter method for bread
+     * @param bread
+     */
     public void setBread(String bread) {
         this.bread = bread;
     }
 
+    /**
+     * Setter method for cheese
+     * @param cheese
+     */
     public void setCheese(boolean cheese) {
         this.cheese = cheese;
     }
 
+    /**
+     * Setter method for lettuce
+     * @param lettuce
+     */
     public void setLettuce(boolean lettuce) {
         this.lettuce = lettuce;
     }
 
+    /**
+     * Setter method for tomatoes
+     * @param tomatoes
+     */
     public void setTomatoes(boolean tomatoes) {
         this.tomatoes = tomatoes;
     }
 
+    /**
+     * Setter method for onions
+     * @param onions
+     */
     public void setOnions(boolean onions) {
         this.onions = onions;
     }
