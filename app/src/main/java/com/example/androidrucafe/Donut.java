@@ -114,4 +114,14 @@ public class Donut extends MenuItem{
     public int getImage() {
         return this.image;
     }
+
+    /**
+     * Makes a copy of donut
+     *
+     * @return a copy of original donut instance
+     */
+    public Donut duplicate() {
+        Donut dup = new Donut(this.getQty(), this.getType(), this.getFlavor());
+        return dup;
+    }
 }

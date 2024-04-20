@@ -33,6 +33,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:layout_marginBottom="37dp"
+        android:onClick="donutAddToOrder"
         android:text="add to order"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

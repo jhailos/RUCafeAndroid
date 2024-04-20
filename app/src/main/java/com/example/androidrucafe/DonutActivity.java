@@ -103,4 +103,15 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
 
         Cart.getInstance().populateOptions(donutTypes, donutFlavor, donutImages);
     }
+
+    public void donutAddToOrder(View view) {
+        while (!cartItems.isEmpty()) {
+            Cart.getInstance().cartList.add(cartItems.get(0).duplicate());
+            cartItems.get(0).setQty(0);
+            Cart.getInstance().getDonutOptions().add(cartItems.get(0));
+            cartItems.remove(0);
+            adaptor.notifyDataSetChanged();
+            cartItemAdaptor.notifyDataSetChanged();
+        }
+    }
 }

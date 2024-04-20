@@ -29,6 +29,8 @@ public class Cart {
     }
 
     public void populateOptions(String[] types, String[] flavors, int[] images) {
+        donutOptions.clear();
+
         for (int i = 0; i < types.length; i++) {
             donutOptions.add(new Donut(0, types[i], flavors[i], images[i]));
         }
