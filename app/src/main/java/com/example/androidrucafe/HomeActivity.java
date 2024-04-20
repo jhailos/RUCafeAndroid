@@ -14,16 +14,18 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private Cart cart = Cart.getInstance();
     private ArrayAdapter<MenuItem> adapter;
     private ListView listview;
+    private static final double TAX_PERCENT = 0.0665;
 
     /**
      * Perform initial setup
@@ -36,6 +38,45 @@ public class HomeActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Cart.cartList);
         listview = findViewById(R.id.homeListView);
         listview.setAdapter(adapter);
+        listview.setOnItemClickListener(this);
+        populateNums();
+    }
+
+    /**
+     * The event Handler for the onItemClick event on the ListView
+     * @param adapterView The AdapterView where the click happened.
+     * @param view The View within the AdapterView that was clicked (in this example is ListView)
+     * @param i the index/position of the view that was clicked in the adapter.
+     * @param l the row id (index) of the item that was clicked.
+     */
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Cart.cartList.remove(i);
+        //list.remove((int) l); //type cast a long to an int if you use the row id
+        adapter.notifyDataSetChanged(); //notify the attached observer the underlying data has been changed.
+
+        populateNums();
+    }
+
+    private void populateNums() {
+        double subtotal = 0;
+        for (int j = 0; j < Cart.cartList.size(); j++) {
+            subtotal = subtotal + Cart.cartList.get(j).price();
+        }
+        subtotal = Math.round(subtotal * Math.pow(10, 2)) / Math.pow(10, 2);
+
+        double tax = Math.round((subtotal * TAX_PERCENT) * Math.pow(10, 2)) / Math.pow(10, 2);
+
+        double total = Math.round((subtotal + tax) * Math.pow(10, 2)) / Math.pow(10, 2);
+
+        TextView homeSubtotalValue = findViewById(R.id.homeSubtotalValue);
+        homeSubtotalValue.setText(String.valueOf(subtotal));
+
+        TextView homeTaxValue = findViewById(R.id.homeTaxValue);
+        homeTaxValue.setText(String.valueOf(tax));
+
+        TextView homeTotalValue = findViewById(R.id.homeTotalValue);
+        homeTotalValue.setText(String.valueOf(total));
     }
 
     /**
@@ -86,9 +127,5 @@ public class HomeActivity extends AppCompatActivity {
         });
         AlertDialog dialog = alert.create();
         dialog.show();
-    }
-
-    public void removeSelected(View view) {
-
     }
 }

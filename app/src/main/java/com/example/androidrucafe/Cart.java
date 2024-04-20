@@ -33,4 +33,12 @@ public class Cart {
             donutOptions.add(new Donut(0, types[i], flavors[i], images[i]));
         }
     }
+
+    public double findSubTotal() {
+        double amt = 0.0;
+        for (int i = 0; i < donutOptions.size(); i++) {
+            amt = amt + donutOptions.get(i).price();
+        }
+        return Math.round(amt * Math.pow(10, 2)) / Math.pow(10, 2);
+    }
 }
