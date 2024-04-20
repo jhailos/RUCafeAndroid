@@ -23,6 +23,10 @@ public class Cart {
         cartList = new ArrayList<>();
     }
 
+    /**
+     * Get singleton instance of Cart
+     * @return
+     */
     public static synchronized Cart getInstance() {
         if (instance == null) instance = new Cart();
         return instance;

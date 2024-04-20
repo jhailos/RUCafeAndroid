@@ -24,6 +24,11 @@ public class DonutAdaptor extends RecyclerView.Adapter<DonutAdaptor.MyViewHolder
     Context context;
     ArrayList<Donut> donuts;
 
+    /**
+     * Constructor
+     * @param context
+     * @param donuts
+     */
     public DonutAdaptor(Context context, ArrayList<Donut> donuts) {
         this.context = context;
         this.donuts = donuts;
@@ -103,6 +108,10 @@ public class DonutAdaptor extends RecyclerView.Adapter<DonutAdaptor.MyViewHolder
         TextView textView;
         Spinner spinner;
 
+        /**
+         * Viewholder constructor
+         * @param itemView
+         */
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -117,7 +126,6 @@ public class DonutAdaptor extends RecyclerView.Adapter<DonutAdaptor.MyViewHolder
                     String item = parent.getItemAtPosition(position).toString();
                     Cart.getInstance().getDonutOptions().get(getAdapterPosition()).setQty(Integer.parseInt(item));
                 }
-
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
 
