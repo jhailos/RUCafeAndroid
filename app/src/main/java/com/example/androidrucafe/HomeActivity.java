@@ -154,5 +154,8 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
         order.setList(Cart.cartList);
         Cart.cartList.clear();
         adapter.notifyDataSetChanged();
+        Cart.allOrders.add(order);
+
+        populateNums();
     }
 }
