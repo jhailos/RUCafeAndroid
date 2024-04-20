@@ -58,7 +58,7 @@ public class OrdersActivity extends AppCompatActivity {
                 for (int i = 0; i < Cart.allOrders.size(); i++) {
                     if (Cart.allOrders.get(i).getNum() == Integer.valueOf(item)) {
                         updateMenuItemAdapter(Cart.allOrders.get(i));
-                        calcTotal();
+                        calcTotal(Cart.allOrders.get(i));
                     }
                 }
             }
@@ -83,15 +83,9 @@ public class OrdersActivity extends AppCompatActivity {
     /**
      * Calculates the total of the selected order
      */
-    private void calcTotal() {
-        double sum = 0.0;
-        for (int i = 0; i < holder.size(); i ++) {
-            sum = sum + holder.get(i).price();
-        }
-        sum = Math.round(sum * Math.pow(10, 2)) / Math.pow(10, 2);
-
+    private void calcTotal(Order order) {
         TextView textView = findViewById(R.id.textView11);
-        String display = "Total: " + sum;
+        String display = "Total: " + order.total();
         textView.setText(display);
     }
 
@@ -138,9 +132,12 @@ public class OrdersActivity extends AppCompatActivity {
             for (int i = 0; i < Cart.allOrders.size(); i++) {
                 if (Cart.allOrders.get(i).getNum() == Integer.valueOf(value)) {
                     updateMenuItemAdapter(Cart.allOrders.get(i));
+                    calcTotal(Cart.allOrders.get(i));
                 }
             }
         }
-        calcTotal();
+        else {
+            calcTotal(new Order());
+        }
     }
 }
