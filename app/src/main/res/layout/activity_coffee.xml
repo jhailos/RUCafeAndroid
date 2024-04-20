@@ -35,7 +35,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="226dp"
         android:onClick="displaySubtotal"
-        android:text="sweet cream"
+        android:text="@string/sweetCream"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,7 +47,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="416dp"
         android:onClick="displaySubtotal"
-        android:text="irish cream"
+        android:text="@string/irishCream"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,7 +59,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="320dp"
         android:onClick="displaySubtotal"
-        android:text="french vanilla"
+        android:text="@string/frenchVanilla"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,7 +71,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="274dp"
         android:onClick="displaySubtotal"
-        android:text="caramel"
+        android:text="@string/caramel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,7 +83,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="368dp"
         android:onClick="displaySubtotal"
-        android:text="mocha"
+        android:text="@string/mocha"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -106,7 +106,7 @@
         android:layout_marginLeft="216dp"
         android:layout_marginTop="416dp"
         android:onClick="addToOrder"
-        android:text="Add To Order"
+        android:text="@string/addToOrder"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -117,7 +117,7 @@
         android:layout_marginStart="219dp"
         android:layout_marginLeft="219dp"
         android:layout_marginTop="239dp"
-        android:text="Sub Total:"
+        android:text="@string/subtotal"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -130,7 +130,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="21dp"
         android:onClick="goToHomeView"
-        android:text="Home"
+        android:text="@string/home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -152,7 +152,7 @@
         android:layout_marginStart="17dp"
         android:layout_marginLeft="17dp"
         android:layout_marginTop="144dp"
-        android:text="Quantity:"
+        android:text="@string/quantity"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -164,7 +164,7 @@
         android:layout_marginStart="223dp"
         android:layout_marginLeft="223dp"
         android:layout_marginTop="147dp"
-        android:text="Size:"
+        android:text="@string/size"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
