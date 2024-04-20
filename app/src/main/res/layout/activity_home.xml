@@ -230,6 +230,7 @@
         android:layout_marginStart="272dp"
         android:layout_marginLeft="272dp"
         android:layout_marginBottom="8dp"
+        android:onClick="placeOrder"
         android:text="@string/placeOrder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

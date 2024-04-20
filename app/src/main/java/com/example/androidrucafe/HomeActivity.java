@@ -124,4 +124,11 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
         Intent intent = new Intent(this, OrdersActivity.class);
         startActivity(intent);
     }
+
+    public void placeOrder(View view) {
+        Order order = new Order();
+        order.setList(Cart.cartList);
+        Cart.cartList.clear();
+        adapter.notifyDataSetChanged();
+    }
 }

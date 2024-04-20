@@ -92,4 +92,13 @@ public class Order {
                 "**total $" + total() + "\n" +
                 items;
     }
+
+    /**
+     * Setter method for the order items list
+     *
+     * @param orderItems
+     */
+    public void setList(ArrayList<MenuItem> orderItems) {
+        this.orderItems = orderItems;
+    }
 }
