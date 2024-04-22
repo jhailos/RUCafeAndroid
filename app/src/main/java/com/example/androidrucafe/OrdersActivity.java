@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -81,6 +82,13 @@ public class OrdersActivity extends AppCompatActivity {
     }
 
     /**
+     * Display a toast to the user
+     */
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
      * Calculates the total of the selected order
      */
     private void calcTotal(Order order) {
@@ -116,6 +124,10 @@ public class OrdersActivity extends AppCompatActivity {
      */
     public void cancelOrder(View view) {
         spinner = findViewById(R.id.ordersSelectPastOrderButton);
+        if (Cart.allOrders.isEmpty()) {
+            showToast("No orders to cancel.");
+            return;
+        }
         String value = spinner.getSelectedItem().toString();
         for (int i = 0; i < Cart.allOrders.size(); i++) {
             if (Cart.allOrders.get(i).getNum() == Integer.parseInt(value)) {
