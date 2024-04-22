@@ -68,6 +68,7 @@
         android:layout_marginStart="264dp"
         android:layout_marginLeft="264dp"
         android:layout_marginTop="169dp"
+        android:onClick="cancelOrder"
         android:text="@string/cancelOrder"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

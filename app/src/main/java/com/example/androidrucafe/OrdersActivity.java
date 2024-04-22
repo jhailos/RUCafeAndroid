@@ -1,5 +1,6 @@
 package com.example.androidrucafe;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -56,6 +58,7 @@ public class OrdersActivity extends AppCompatActivity {
                 for (int i = 0; i < Cart.allOrders.size(); i++) {
                     if (Cart.allOrders.get(i).getNum() == Integer.valueOf(item)) {
                         updateMenuItemAdapter(Cart.allOrders.get(i));
+                        calcTotal(Cart.allOrders.get(i));
                     }
                 }
             }
@@ -78,6 +81,15 @@ public class OrdersActivity extends AppCompatActivity {
     }
 
     /**
+     * Calculates the total of the selected order
+     */
+    private void calcTotal(Order order) {
+        TextView textView = findViewById(R.id.textView11);
+        String display = "Total: " + order.total();
+        textView.setText(display);
+    }
+
+    /**
      * Populate the order number list
      */
     private void popOrderNumList() {
@@ -95,5 +107,37 @@ public class OrdersActivity extends AppCompatActivity {
     public void goToHomeView(View view) {
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
+    }
+
+    /**
+     * Cancel current order
+     *
+     * @param view
+     */
+    public void cancelOrder(View view) {
+        spinner = findViewById(R.id.ordersSelectPastOrderButton);
+        String value = spinner.getSelectedItem().toString();
+        for (int i = 0; i < Cart.allOrders.size(); i++) {
+            if (Cart.allOrders.get(i).getNum() == Integer.parseInt(value)) {
+                Cart.allOrders.remove(i);
+                listOrderNums.remove(i);
+                holder.clear();
+                adapterOrders.notifyDataSetChanged();
+                adapterMenuItems.notifyDataSetChanged();
+            }
+        }
+        spinner.setSelection(0);
+        if (!listOrderNums.isEmpty()) {
+            value = spinner.getSelectedItem().toString();
+            for (int i = 0; i < Cart.allOrders.size(); i++) {
+                if (Cart.allOrders.get(i).getNum() == Integer.valueOf(value)) {
+                    updateMenuItemAdapter(Cart.allOrders.get(i));
+                    calcTotal(Cart.allOrders.get(i));
+                }
+            }
+        }
+        else {
+            calcTotal(new Order());
+        }
     }
 }
