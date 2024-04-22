@@ -94,20 +94,20 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
      * @param view
      */
     public void addToDonutCart(View view) {
-        noSelectionNotif();
-
-        for (int i = 0; i < Cart.getInstance().getDonutOptions().size(); i++) {
-            if (Cart.getInstance().getDonutOptions().get(i).getQty() != 0) {
-                cartItems.add(Cart.getInstance().getDonutOptions().get(i));
-                Cart.getInstance().getDonutOptions().remove(i);
-                i--;
+        if (noSelectionNotif()) {
+            for (int i = 0; i < Cart.getInstance().getDonutOptions().size(); i++) {
+                if (Cart.getInstance().getDonutOptions().get(i).getQty() != 0) {
+                    cartItems.add(Cart.getInstance().getDonutOptions().get(i));
+                    Cart.getInstance().getDonutOptions().remove(i);
+                    i--;
+                }
             }
-        }
-        adaptor.notifyDataSetChanged();
-        cartItemAdaptor.notifyDataSetChanged();
+            adaptor.notifyDataSetChanged();
+            cartItemAdaptor.notifyDataSetChanged();
 
-        calcSubTotal();
-        showToast("Donuts added to cart.");
+            calcSubTotal();
+            showToast("Donuts added to cart.");
+        }
     }
 
     /**
@@ -139,7 +139,10 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
      * @param view
      */
     public void donutAddToOrder(View view) {
-        if(cartItems.isEmpty()) showToast("Cart is empty");
+        if(cartItems.isEmpty()) {
+            showToast("Cart is empty");
+            return;
+        }
         while (!cartItems.isEmpty()) {
             Cart.getInstance().cartList.add(cartItems.get(0).duplicate());
             cartItems.get(0).setQty(0);
@@ -157,7 +160,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
     /**
      * Gives notifcation that no qty selections were made
      */
-    private void noSelectionNotif() {
+    private boolean noSelectionNotif() {
         boolean selected = false;
         for (int i = 0; i < Cart.getInstance().getDonutOptions().size(); i++) {
             if (Cart.getInstance().getDonutOptions().get(i).getQty() != 0) {
@@ -167,5 +170,6 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         if (!selected) {
             showToast("No donuts selected.");
         }
+        return selected;
     }
 }
