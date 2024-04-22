@@ -107,6 +107,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         cartItemAdaptor.notifyDataSetChanged();
 
         calcSubTotal();
+        showToast("Donuts added to cart.");
     }
 
     /**
@@ -150,6 +151,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         }
 
         calcSubTotal();
+        showToast("Added to order.");
     }
 
     /**
@@ -163,8 +165,7 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
             }
         }
         if (!selected) {
-            //create notification here!
-
+            showToast("No donuts selected.");
         }
     }
 }
