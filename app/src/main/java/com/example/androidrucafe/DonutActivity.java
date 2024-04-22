@@ -94,6 +94,8 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
      * @param view
      */
     public void addToDonutCart(View view) {
+        noSelectionNotif();
+
         for (int i = 0; i < Cart.getInstance().getDonutOptions().size(); i++) {
             if (Cart.getInstance().getDonutOptions().get(i).getQty() != 0) {
                 cartItems.add(Cart.getInstance().getDonutOptions().get(i));
@@ -148,5 +150,21 @@ public class DonutActivity extends AppCompatActivity implements AdapterView.OnIt
         }
 
         calcSubTotal();
+    }
+
+    /**
+     * Gives notifcation that no qty selections were made
+     */
+    private void noSelectionNotif() {
+        boolean selected = false;
+        for (int i = 0; i < Cart.getInstance().getDonutOptions().size(); i++) {
+            if (Cart.getInstance().getDonutOptions().get(i).getQty() != 0) {
+                selected = true;
+            }
+        }
+        if (!selected) {
+            //create notification here!
+
+        }
     }
 }
