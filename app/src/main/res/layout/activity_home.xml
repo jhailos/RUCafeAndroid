@@ -87,7 +87,6 @@
             android:id="@+id/orderCoffeeButton"
             android:layout_width="114dp"
             android:layout_height="119dp"
-            android:contentDescription="Order Coffee"
             android:onClick="goToCoffeeView"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/coffee_home" />
@@ -120,7 +119,6 @@
             android:id="@+id/orderDonutButton"
             android:layout_width="114dp"
             android:layout_height="119dp"
-            android:contentDescription="Order Donut"
             android:onClick="goToDonutView"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/donut_home" />
@@ -151,7 +149,6 @@
             android:id="@+id/orderSandwichButton"
             android:layout_width="114dp"
             android:layout_height="119dp"
-            android:contentDescription="Order Sandwich"
             android:onClick="goToSandwichView"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/sandwich_home" />
