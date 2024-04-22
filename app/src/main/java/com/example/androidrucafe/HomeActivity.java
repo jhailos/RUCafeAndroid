@@ -48,6 +48,13 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     /**
+     * Display a toast to the user
+     */
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
      * The event Handler for the onItemClick event on the ListView
      * @param adapterView The AdapterView where the click happened.
      * @param view The View within the AdapterView that was clicked (in this example is ListView)
@@ -155,12 +162,15 @@ public class HomeActivity extends AppCompatActivity implements AdapterView.OnIte
      * @param view
      */
     public void placeOrder(View view) {
+        if (Cart.cartList.isEmpty()) {
+            showToast("Cart is empty.");
+            return;
+        }
         Order order = new Order();
         order.setList(Cart.cartList);
         Cart.cartList.clear();
         adapter.notifyDataSetChanged();
         Cart.allOrders.add(order);
-
         populateNums();
     }
 }
